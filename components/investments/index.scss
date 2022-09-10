@@ -1,0 +1,218 @@
+@import "~/assets/styles/variables.scss";
+
+.investments {
+  display: flex;
+  align-items: center;
+  gap: 0 40px;
+  @media (max-width: $media_xxl) {
+    gap: 0 32px;
+  }
+  @media (max-width: $media_md) {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}
+
+* + .investments {
+  margin-top: 140px;
+  @media (max-width: $media_xxl) {
+    margin-top: 106px;
+  }
+  @media (max-width: $media_md) {
+    margin-top: 52px;
+  }
+  @media (max-width: $media_sm) {
+    margin-top: 32px;
+  }
+}
+
+.investments-statuses {
+  display: flex;
+  flex-wrap: wrap;
+  color: map-get($colors, "white-300");
+  font-size: $font_size_lg;
+  @media (max-width: $media_xxl) {
+    font-size: 20px;
+  }
+
+  max-width: min-content;
+  &-link {
+    display: flex;
+    width: 100%;
+  }
+  * + &-link {
+    margin-top: 24px;
+    @media (max-width: $media_xxl) {
+      margin-top: 15px;
+    }
+  }
+  ul {
+    display: inline-flex;
+    align-items: center;
+    gap: 0 40px;
+    line-height: 32px;
+    @media (max-width: $media_xxl) {
+      gap: 0 32px;
+      @media (max-width: $media_sm) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+    li {
+      display: inline-flex;
+    }
+  }
+}
+
+.investments-swither {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 240px;
+  height: 144px;
+  border-radius: 24px;
+  border: 1px solid map-get($colors, "white-300");
+  background-color: map-get($colors, "violet-400");
+  color: rgba(map-get($colors, "white-300"), 0.9);
+  font-size: $font_size_md;
+  line-height: 37px;
+  padding-left: 38px;
+  padding-right: 38px;
+  @media (max-width: $media_xxl) {
+    padding-left: 28px;
+    padding-right: 28px;
+    border-radius: 17px;
+    font-size: 16px;
+    line-height: 30px;
+    width: 180px;
+    height: 108px;
+  }
+  @media (max-width: $media_md) {
+    width: 192px;
+  }
+  @media (max-width: $media_xs) {
+    width: 170px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  li.active {
+    color: map-get($colors, "white");
+    font-weight: 500;
+  }
+}
+
+.investments-balance {
+  @media (max-width: $media_md) {
+    margin-top: 40px;
+  }
+  @media (max-width: $media_sm) {
+    margin-top: 32px;
+  }
+}
+
+.investments-balance-list {
+  &__item {
+    text-transform: uppercase;
+    font-size: $font_size_md;
+    @media (max-width: $media_xxl) {
+      font-size: 16px;
+    }
+    @media (max-width: $media_xs) {
+      font-size: 14px;
+      span {
+        display: block;
+      }
+    }
+
+    font-family: $font_family_text;
+    letter-spacing: 0.1em;
+    line-height: 32px;
+    color: map-get($colors, "white-300");
+  }
+  * + &__item {
+    margin-top: 22px;
+    @media (max-width: $media_xxl) {
+      margin-top: 12px;
+    }
+  }
+  &__logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px;
+    height: 22px;
+    background-color: map-get($colors, "white");
+    border-radius: 50%;
+    @media (max-width: $media_xxl) {
+      width: 16px;
+      height: 16px;
+    }
+    svg {
+      width: 14px;
+      height: 14px;
+      fill: map-get($colors, "bnb");
+      @media (max-width: $media_xxl) {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}
+
+// Switch input
+.switch {
+  position: relative;
+  width: 30px;
+  flex: 0 0 auto;
+  span {
+    width: 30px;
+    height: 52px;
+    display: block;
+    background: linear-gradient(180deg, #b895e5 0%, #a27ad5 100%);
+    position: relative;
+    cursor: pointer;
+    border-radius: 36px;
+    overflow: hidden;
+    transition: 0.3s cubic-bezier(0, 0, 0.11, 1.18);
+    &:before {
+      content: "";
+      position: absolute;
+      width: 22px;
+      height: 22px;
+      left: 4px;
+      top: 2px;
+      transition: 0.3s cubic-bezier(0, 0, 0.11, 1.18);
+      border-radius: 50%;
+      box-shadow: 0px 3px 8px rgba(0, 0, 0, 0.1), 0px 1px 1px rgba(0, 0, 0, 0.01), 0px 3px 1px rgba(0, 0, 0, 0.03);
+    }
+  }
+  input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    opacity: 0;
+    z-index: 1;
+    margin: 0;
+    cursor: pointer;
+    &:not(:checked) ~ span:before {
+      transform: translateY(2px);
+      background: #fff;
+    }
+    &:checked ~ span {
+      background: linear-gradient(180deg, #7be8ff 0%, #49d5f2 100%);
+      &:before {
+        transform: translateY(22px);
+        background: #fff;
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+@import "~/assets/styles/variables.scss";
+
+.question-title {
+  &__wrap {
+    margin-bottom: 146px;
+    text-align: center;
+    @media (max-width: $media_xxl) {
+      margin-bottom: 110px;
+    }
+    @media (max-width: $media_xl) {
+      margin-bottom: 48px;
+    }
+    @media (max-width: $media_sm) {
+      margin-bottom: 26px;
+    }
+  }
+}

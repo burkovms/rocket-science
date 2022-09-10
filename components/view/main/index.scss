@@ -1,0 +1,239 @@
+@import "~/assets/styles/variables.scss";
+@import url("https://fonts.googleapis.com/css2?family=Oooh+Baby&display=swap");
+
+.main {
+  position: relative;
+  z-index: 1;
+  padding-top: 54px;
+  @media (max-width: $media_sm) {
+    padding-top: 36px;
+  }
+  p {
+    letter-spacing: 0.1em;
+    font-family: $font_family_text;
+    margin-top: 56px;
+    @media (max-width: $media_xxl) {
+      margin-top: 42px;
+    }
+    @media (max-width: $media_xl) {
+      margin-top: 32px;
+    }
+  }
+
+  &__row {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    @media (max-width: $media_md) {
+      flex-wrap: wrap;
+      align-items: flex-start;
+    }
+  }
+
+  &__slogan {
+    font-family: $font_family_text;
+    max-width: 584px;
+    letter-spacing: 0.1em;
+    opacity: 0.85;
+    margin-top: 36px;
+    @media (max-width: $media_xxl) {
+      margin-top: 27px;
+      max-width: 440px;
+    }
+    @media (max-width: $media_xl) {
+      margin-top: 16px;
+      max-width: 400px;
+    }
+    @media (max-width: $media_lg) {
+      max-width: 354px;
+    }
+    @media (max-width: $media_sm) {
+      max-width: 100%;
+    }
+    .text-accent {
+      font-weight: 600;
+    }
+  }
+
+  &__btn-wrap {
+    display: flex;
+    align-items: flex-start;
+    margin-top: 24px;
+    @media (max-width: $media_xl) {
+      margin-top: 16px;
+    }
+    @media (max-width: $media_sm) {
+      gap: 24px;
+    }
+    .btn {
+      @media (max-width: $media_sm) {
+        width: 50%;
+      }
+      + * {
+        margin-left: 20px;
+        @media (max-width: $media_sm) {
+          margin-left: 0;
+        }
+      }
+    }
+    .btn-white {
+      img {
+        height: 90px;
+        @media (max-width: $media_xxl) {
+          height: 80px;
+        }
+      }
+    }
+  }
+
+  &__counter {
+    margin-top: 107px;
+    @media (max-width: $media_xxl) {
+      margin-top: 80px;
+    }
+    @media (max-width: $media_xl) {
+      margin-top: 44px;
+    }
+    @media (max-width: $media_sm) {
+      margin-top: 40px;
+    }
+  }
+
+  &__counter-row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -20px;
+    margin-right: -20px;
+    @media (max-width: $media_xxl) {
+      margin-left: -16px;
+      margin-right: -16px;
+    }
+    @media (max-width: $media_md) {
+      margin-left: -14px;
+      margin-right: -14px;
+    }
+    @media (max-width: $media_sm) {
+      margin-left: -6px;
+      margin-right: -6px;
+    }
+  }
+
+  &__counter-col {
+    padding-left: 20px;
+    padding-right: 20px;
+    @media (max-width: $media_xxl) {
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+    @media (max-width: $media_md) {
+      padding-left: 14px;
+      padding-right: 14px;
+    }
+    @media (max-width: $media_sm) {
+      padding-left: 6px;
+      padding-right: 6px;
+    }
+    .number {
+      @media (max-width: $media_sm) {
+        font-size: 30px;
+      }
+      span {
+        font-size: 37px;
+        @media (max-width: $media_xxl) {
+          font-size: 28px;
+        }
+        @media (max-width: $media_sm) {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+
+  &__counter-text {
+    opacity: 0.8;
+    @media (max-width: $media_sm) {
+      font-size: 12px;
+    }
+  }
+
+  &__rocket-tablet {
+    display: none;
+    @media (max-width: $media_md) {
+      display: block;
+    }
+    @media (max-width: $media_sm) {
+      display: none;
+    }
+  }
+
+  &__rocket-mobile {
+    display: none;
+    @media (max-width: $media_sm) {
+      display: block;
+      max-width: 100%;
+      margin: 0 auto;
+    }
+  }
+
+  &__planet-mobile {
+    display: none;
+    @media (max-width: $media_sm) {
+      display: block;
+      position: absolute;
+      bottom: -250px;
+      right: 50%;
+      transform: translateX(50%);
+      max-width: 100%;
+      z-index: -1;
+      pointer-events: none;
+    }
+  }
+
+  &__left {
+    @media (max-width: $media_md) {
+      flex: 0 0 100%;
+      margin-bottom: 52px;
+    }
+    @media (max-width: $media_sm) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__right {
+    @media (max-width: $media_md) {
+      margin-left: auto;
+      margin-top: 38px;
+    }
+    @media (max-width: $media_sm) {
+      margin-left: 0;
+      margin-top: 30px;
+    }
+  }
+
+  &__right-title {
+    font-family: "Oooh Baby", cursive;
+    font-size: 40px;
+    line-height: 2.2;
+    letter-spacing: 0.005em;
+    text-shadow: 1px 1px 0px white;
+    @media (max-width: $media_xxl) {
+      font-size: 30px;
+    }
+    @media (max-width: $media_xs) {
+      font-size: 28px;
+    }
+  }
+
+  &__right-slogan {
+    opacity: 0.9;
+    letter-spacing: 0.1em;
+    font-family: $font_family_text;
+    max-width: 500px;
+    @media (max-width: $media_xxl) {
+      max-width: 374px;
+    }
+    @media (max-width: $media_lg) {
+      max-width: 355px;
+    }
+  }
+}

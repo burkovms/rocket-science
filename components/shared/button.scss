@@ -1,0 +1,131 @@
+@import "~/assets/styles/variables.scss";
+
+.btn {
+  user-select: none;
+  cursor: pointer;
+  border-radius: $border_radius;
+  font-family: $font_family;
+  font-weight: 500;
+  font-size: $font_size_md;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 90px;
+  padding: 0 57px;
+  border: 1px solid rgba(map-get($colors, "violet"), 0.8);
+  color: map-get($colors, "white");
+  background-color: map-get($colors, "violet");
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  text-transform: capitalize;
+  transition: 0.4s ease;
+  @media (max-width: $media_xxl) {
+    font-size: 16px;
+    height: 68px;
+    padding: 0 43px;
+    border-radius: 20px;
+  }
+  @media (max-width: $media_xl) {
+    font-size: 14px;
+    height: 56px;
+    padding: 0 32px;
+    border-radius: 16px;
+  }
+
+  &:hover {
+    border-color: transparent;
+    background-color: map-get($colors, "violet-400");
+    background-position: 0 0;
+  }
+  &.btn-white {
+    color: map-get($colors, "violet");
+    border-color: rgba(map-get($colors, "white"), 0.8);
+    background-image: linear-gradient(
+      262.95deg,
+      #fff 25%,
+      rgba(255, 255, 255, 0.6) 50%,
+      rgba(255, 255, 255, 0.6) 25%,
+      #fff 75%
+    );
+  }
+  &.btn-turquoise {
+    color: map-get($colors, "black-100");
+    border-color: rgba(map-get($colors, "white"), 0.8);
+    background-color: map-get($colors, "turquoise");
+    &:hover {
+      color: map-get($colors, "white");
+      background-color: map-get($colors, "turquoise-100");
+    }
+  }
+
+  &[disabled] {
+    pointer-events: none;
+    cursor: initial;
+    opacity: 0.5;
+  }
+}
+
+.btn-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  color: map-get($colors, "violet");
+  line-height: 40px;
+  font-size: $font_size_lg;
+  @media (max-width: $media_xxl) {
+    font-size: 20px;
+    line-height: 30px;
+  }
+  svg {
+    margin-left: 10px;
+    width: 28px;
+    height: 28px;
+    fill: map-get($colors, "violet");
+    transition: 0.25s ease;
+    @media (max-width: $media_xxl) {
+      width: 24px;
+      height: 24px;
+    }
+  }
+  &:hover {
+    color: map-get($colors, "turquoise");
+    svg {
+      fill: map-get($colors, "turquoise");
+    }
+  }
+  &.btn-link__white {
+    color: map-get($colors, "white");
+    svg {
+      fill: map-get($colors, "white");
+    }
+    &:hover {
+      color: map-get($colors, "turquoise");
+      svg {
+        fill: map-get($colors, "turquoise");
+      }
+    }
+  }
+}
+
+.btn-close {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background: map-get($colors, "violet");
+  transition: 0.25s ease;
+  &:hover {
+    background: map-get($colors, "violet-400");
+    svg {
+      transform: rotate(90deg);
+    }
+  }
+  svg {
+    width: 10px;
+    height: 10px;
+    transition: 0.25s ease;
+  }
+}
