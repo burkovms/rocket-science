@@ -83,14 +83,8 @@ export default defineComponent({
           </div>
           <p>Your safe mission in binance smart chain</p>
           <div class="main__btn-wrap">
-            <a :href="contractLinkAddress" target="_blank" class="btn">
-              Contract
-            </a>
-            <a
-              href="https://www.certik.com/projects/rocket-science"
-              target="_blank"
-              class="btn btn-white"
-            >
+            <a href="#" target="_blank" class="btn"> Contract </a>
+            <a href="#" target="_blank" class="btn btn-white">
               <img src="@/static/certik.svg" alt="icon" />
             </a>
           </div>

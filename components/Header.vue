@@ -514,7 +514,7 @@ export default defineComponent({
           <ul class="socials">
             <li>
               <span>Join our telegram</span>
-              <a href="https://t.me/rocketsciencezone" target="_blank">
+              <a href="#" target="_blank">
                 <span>
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                     <path
@@ -529,7 +529,7 @@ export default defineComponent({
         </nav>
         <ul class="socials">
           <li>
-            <a href="https://t.me/rocketsciencezone" target="_blank">
+            <a href="#" target="_blank">
               <span>
                 <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
                   <path
